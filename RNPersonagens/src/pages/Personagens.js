@@ -35,7 +35,7 @@ class Personagens extends Component {
         return (
             <View style={style.main}>
                 <View style={style.header}>
-                    <Text style={style.titulo}>{"Personagenas".toUpperCase()}</Text>
+                    <Text style={style.titulo}>{"Personagens".toUpperCase()}</Text>
                 </View>
                 <View>
                     <FlatList
