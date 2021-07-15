@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 
-import { View, Text, Image, ScrollView, StyleSheet, FlatList } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 class Profile extends Component {
     static navigationOptions = {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: () => (
             <Image
                 source={require("../assents/resume.png")}
                 style={style.iconBar}
             />
         )
     };
+
     render() {
         return (
             <View style={style.main}>
                 <View style={style.header}>
                     <Text style={style.titulo}>{"Informações Dev".toUpperCase()}</Text>
                 </View>
+
                 <View style={style.divImgProfile}>
-                    <Image 
-                    source={require("../assents/reading.png")}
-                    style={style.imgProfile}/>
+                    <Image
+                        source={require("../assents/reading.png")}
+                        style={style.imgProfile}
+                    />
                 </View>
+
                 <View style={style.dadosContainer}>
                     <Text style={style.dadosNome}>Ricardo Paulo da Cunha</Text>
                     <View>

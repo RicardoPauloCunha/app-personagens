@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
-import { View, Text, Image, ScrollView, StyleSheet, FlatList } from "react-native";
+import { View, Text, Image, StyleSheet, FlatList } from "react-native";
 import api from "../services/api";
 
 class Personagens extends Component {
     static navigationOptions = {
-        tabBarIcon: ({ tintColor }) => (
-          <Image
-            source={require("../assents/superhero.png")}
-            style={style.iconBar}
-          />
+        tabBarIcon: () => (
+            <Image
+                source={require("../assents/superhero.png")}
+                style={style.iconBar}
+            />
         )
-      };
+    };
 
     constructor(props) {
         super(props);
@@ -28,7 +28,7 @@ class Personagens extends Component {
     listarPersonagens = async () => {
         const resposta = await api.get("/personagens");
         const data = resposta.data;
-        this.setState({listaPersonagens: data});
+        this.setState({ listaPersonagens: data });
     }
 
     render() {
@@ -37,6 +37,7 @@ class Personagens extends Component {
                 <View style={style.header}>
                     <Text style={style.titulo}>{"Personagens".toUpperCase()}</Text>
                 </View>
+
                 <View>
                     <FlatList
                         contentContainerStyle={style.listaCoteudo}
@@ -55,11 +56,12 @@ class Personagens extends Component {
                 <Text style={style.itemListaDadosNome}>{item.nome}</Text>
                 <Text style={style.itemListaDadosTitulo}>{item.lancamento}</Text>
             </View>
+            
             <View style={style.itemListaImagem}>
                 <View style={style.itemListaImagemTest}>
                     <Image
-                        style={{width:70, height:70}}
-                        source={{uri: item.urlImagem}}
+                        style={{ width: 70, height: 70 }}
+                        source={{ uri: item.urlImagem }}
                     />
                 </View>
             </View>
@@ -88,7 +90,7 @@ const style = StyleSheet.create({
         fontSize: 25,
     },
     listaCoteudo: {
-        
+
     },
     itemListaContainer: {
         flexDirection: "row",
